@@ -1,0 +1,22 @@
+
+spring:
+  application:
+    name: eurekas-server
+
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8761
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
